@@ -5,32 +5,32 @@ using System.Text;
 namespace ClassLibrary
 {
     /// <summary>
-    /// Class of Car
+    /// Class of Motorcycle
     /// </summary>
-    public class Car
+    public class Motorcycle
     {
         /// <summary>
-        /// LicensePlate Property for car returns type string
+        /// LicensePlate Property for Motorcycle returns type string
         /// </summary>
         public string LicensePlate { get; set; }
         /// <summary>
-        /// Date property for car class returns type DateTime
+        /// Date property for Motorcycle class returns type DateTime
         /// </summary>
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Simple method returns cars price is 240
+        /// Simple method returns Motorcycle price is 125
         /// </summary>
         public double Price()
         {
-            return 240;
+            return 125;
         }
         /// <summary>
-        /// Simple method returning the string "Car"
+        /// Simple method returning the string "Motorcycle"
         /// </summary>
         public string VehicleType()
         {
-            return "Car";
+            return "Motorcycle";
         }
     }
 }

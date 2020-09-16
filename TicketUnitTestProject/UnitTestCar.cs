@@ -30,4 +30,30 @@ namespace TicketUnitTestProject
             Assert.AreSame("Car",type);
         }
     }
+
+    [TestClass]
+    public class UnitTestMotorcycle
+    {
+        [TestMethod]
+        public void PriceTestMotorcycle()
+        {
+            //Arrange
+            var mc = new Motorcycle();
+            //Act
+            double price = mc.Price();
+            //Assert
+            Assert.AreEqual(125, price);
+        }
+
+        [TestMethod]
+        public void VehicleTypeTestMotorcycle()
+        {
+            //Arrange
+            var mc = new Motorcycle();
+            //Act
+            string type = mc.VehicleType();
+            //Assert
+            Assert.AreSame("Motorcycle", type);
+        }
+    }
 }
