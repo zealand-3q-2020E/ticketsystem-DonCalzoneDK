@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:ClassLibrary.Car.Price">
+            <summary>
+            Simple method returns cars price is 240
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Car.VehicleType">
+            <summary>
+            Simple method returning the string "Car"
+            </summary>
+        </member>
+    </members>
+</doc>
