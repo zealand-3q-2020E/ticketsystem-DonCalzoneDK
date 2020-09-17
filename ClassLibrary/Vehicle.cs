@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace ClassLibrary
@@ -10,6 +12,9 @@ namespace ClassLibrary
     /// </summary>
     public abstract class Vehicle
     {
+
+        private string _licensePlate;
+
         /// <summary>
         /// returns the Price of the car (240)
         /// It's possible to override this method, because it is virtual 
@@ -20,7 +25,6 @@ namespace ClassLibrary
             return 240;
         }
 
-
         /// <summary>
         /// Abstract method of VehicleType
         /// </summary>
@@ -28,16 +32,29 @@ namespace ClassLibrary
         public abstract string VehicleType();
 
         /// <summary>
-        /// LicensePlate Property for car returns type string
+        /// LicensePlate Property for car returns type string and will throw an error if
+        /// the length is over of the license plate is over 7 characters long
         /// </summary>
-        public string LicensePlate { get; set; }
+        public string LicensePlate
+        {
+            get { return this._licensePlate;}
+            set
+            {
+                if (value.Length > 7)
+                {
+                    throw new ArgumentOutOfRangeException("License Plate Exceeded The Maximum Length of 7");
+                }
+
+                this._licensePlate = value;
+            }
+        }
+
         /// <summary>
         /// Date property for car class returns type DateTime
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime _date { get; set; }
 
-
-
+        
 
     }
 }

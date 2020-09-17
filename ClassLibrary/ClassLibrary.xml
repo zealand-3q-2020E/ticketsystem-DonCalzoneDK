@@ -35,6 +35,11 @@
             Simple method returning the string "Motorcycle"
             </summary>
         </member>
+        <member name="T:ClassLibrary.Vehicle">
+            <summary>
+            Base class Vehicle
+            </summary>
+        </member>
         <member name="M:ClassLibrary.Vehicle.Price">
             <summary>
             returns the Price of the car (240)
@@ -42,12 +47,19 @@
             </summary>
             <returns>240 dkk</returns>
         </member>
+        <member name="M:ClassLibrary.Vehicle.VehicleType">
+            <summary>
+            Abstract method of VehicleType
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:ClassLibrary.Vehicle.LicensePlate">
             <summary>
-            LicensePlate Property for car returns type string
+            LicensePlate Property for car returns type string and will throw an error if
+            the length is over of the license plate is over 7 characters long
             </summary>
         </member>
-        <member name="P:ClassLibrary.Vehicle.Date">
+        <member name="P:ClassLibrary.Vehicle._date">
             <summary>
             Date property for car class returns type DateTime
             </summary>

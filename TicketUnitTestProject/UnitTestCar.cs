@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -55,5 +56,32 @@ namespace TicketUnitTestProject
             //Assert
             Assert.AreSame("Motorcycle", type);
         }
+
+        //[TestMethod]
+        //public void LicensePlateLengthTestMotorcycle()
+        //{
+        //    //Arrange
+        //    var lp = new Motorcycle();
+        //    //Act
+            
+        //    //Assert
+        //    Assert.ThrowsException<Exception>(() => lp.LicensePlate.Length.CompareTo("123456677534"),
+        //        "License Plate Exceeded The Maximum Length of 7");
+        //}
+
+        //[TestMethod]
+        //[ExpectedException(typeof(ArgumentOutOfRangeException))]
+        //public void TestCarLicensePlateLengthOver7()
+        //{
+        //    //Arrange
+        //    Motorcycle mc = new Motorcycle();
+
+        //    //Act
+            
+        //    //Assert
+        //    Assert.Fail("License Plate Exceeded The Maximum Length of 7");
+        //}
+
     }
+
 }

@@ -9,7 +9,7 @@ namespace ClassLibrary
     /// </summary>
     public class Motorcycle : Vehicle
     {
-
+        
         /// <summary>
         /// Simple override method returns Motorcycle price is 125
         /// instead of the default price of vehicle(240)
