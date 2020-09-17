@@ -7,30 +7,24 @@ namespace ClassLibrary
     /// <summary>
     /// Class of Motorcycle
     /// </summary>
-    public class Motorcycle
+    public class Motorcycle : Vehicle
     {
-        /// <summary>
-        /// LicensePlate Property for Motorcycle returns type string
-        /// </summary>
-        public string LicensePlate { get; set; }
-        /// <summary>
-        /// Date property for Motorcycle class returns type DateTime
-        /// </summary>
-        public DateTime Date { get; set; }
 
         /// <summary>
-        /// Simple method returns Motorcycle price is 125
+        /// Simple override method returns Motorcycle price is 125
+        /// instead of the default price of vehicle(240)
         /// </summary>
-        public double Price()
+        public override double Price()
         {
             return 125;
         }
         /// <summary>
         /// Simple method returning the string "Motorcycle"
         /// </summary>
-        public string VehicleType()
+        public override string VehicleType()
         {
             return "Motorcycle";
         }
+
     }
 }

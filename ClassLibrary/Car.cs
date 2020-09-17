@@ -7,28 +7,23 @@ namespace ClassLibrary
     /// <summary>
     /// Class of Car
     /// </summary>
-    public class Car
+    public class Car : Vehicle
     {
-        /// <summary>
-        /// LicensePlate Property for car returns type string
-        /// </summary>
-        public string LicensePlate { get; set; }
-        /// <summary>
-        /// Date property for car class returns type DateTime
-        /// </summary>
-        public DateTime Date { get; set; }
 
+        
         /// <summary>
-        /// Simple method returns cars price is 240
+        /// Empty Constructor for class car 
         /// </summary>
-        public double Price()
+        public Car()
         {
-            return 240;
+
         }
+
+
         /// <summary>
         /// Simple method returning the string "Car"
         /// </summary>
-        public string VehicleType()
+        public override string VehicleType()
         {
             return "Car";
         }
