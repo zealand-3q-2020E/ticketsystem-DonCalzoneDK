@@ -13,7 +13,7 @@ namespace TicketUnitTestProject
         public void PriceTestCar()
         {
             //Arrange
-            var car = new Car(); 
+            var car = new Car("1234567", false, DateTime.Now); 
             //Act
             double price = car.Price();
             //Assert
@@ -24,12 +24,47 @@ namespace TicketUnitTestProject
         public void VehicleTypeTestCar()
         {
             //Arrange
-            var car = new Car();
+            var car = new Car("1234567", false, DateTime.Now);
             //Act
             string type = car.VehicleType();
             //Assert
             Assert.AreSame("Car",type);
         }
+
+        [TestMethod]
+        public void BrobizzDiscountPriceTestCar()
+        {
+            //Arrange
+            var car = new Car("1234567", true, DateTime.Now);
+            //Act
+            double price = car.Price();
+            //Assert
+            Assert.AreEqual(240,price, 0.95);
+        }
+
+        [TestMethod]
+        public void AcceptableLicensePlateLengthOf7TestCar()
+        {
+            //Arrange
+            var car = new Car("1234567", false, DateTime.Now);
+            //Act
+            string vehicleType = car.VehicleType();
+            //Assert
+            Assert.AreEqual("Car",vehicleType);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void UnacceptableLicensePlateLengthOf8OrMoreTestCar()
+        {
+            //Arrange
+            var car = new Car("12345678", false, DateTime.Now);
+            //Act
+            string vehicleType = car.VehicleType();
+            //Assert
+            Assert.AreEqual("Car", vehicleType);
+        }
+
     }
 
     [TestClass]
@@ -39,7 +74,7 @@ namespace TicketUnitTestProject
         public void PriceTestMotorcycle()
         {
             //Arrange
-            var mc = new Motorcycle();
+            var mc = new Motorcycle("1234567", false, DateTime.Now);
             //Act
             double price = mc.Price();
             //Assert
@@ -50,37 +85,46 @@ namespace TicketUnitTestProject
         public void VehicleTypeTestMotorcycle()
         {
             //Arrange
-            var mc = new Motorcycle();
+            var mc = new Motorcycle("1234567",false, DateTime.Now);
             //Act
             string type = mc.VehicleType();
             //Assert
             Assert.AreSame("Motorcycle", type);
         }
 
-        //[TestMethod]
-        //public void LicensePlateLengthTestMotorcycle()
-        //{
-        //    //Arrange
-        //    var lp = new Motorcycle();
-        //    //Act
-            
-        //    //Assert
-        //    Assert.ThrowsException<Exception>(() => lp.LicensePlate.Length.CompareTo("123456677534"),
-        //        "License Plate Exceeded The Maximum Length of 7");
-        //}
+        [TestMethod]
+        public void BrobizzDiscountPriceTestMotorcycle()
+        {
+            //Arrange
+            var mc = new Motorcycle("1234567", true, DateTime.Now);
+            //Act
+            double price = mc.Price();
+            //Assert
+            Assert.AreEqual(125, price, 0.95);
+        }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentOutOfRangeException))]
-        //public void TestCarLicensePlateLengthOver7()
-        //{
-        //    //Arrange
-        //    Motorcycle mc = new Motorcycle();
+        [TestMethod]
+        public void AcceptableLicensePlateLengthOf7TestMotorcycle()
+        {
+            //Arrange
+            var mc = new Motorcycle("1234567", false, DateTime.Now);
+            //Act
+            string vehicleType = mc.VehicleType();
+            //Assert
+            Assert.AreEqual("Motorcycle", vehicleType);
+        }
 
-        //    //Act
-            
-        //    //Assert
-        //    Assert.Fail("License Plate Exceeded The Maximum Length of 7");
-        //}
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void UnacceptableLicensePlateLengthOf8OrMoreTestMotorcycle()
+        {
+            //Arrange
+            var mc = new Motorcycle("12345678", false, DateTime.Now);
+            //Act
+            string vehicleType = mc.VehicleType();
+            //Assert
+            Assert.AreEqual("Motorcycle", vehicleType);
+        }
 
     }
 

@@ -9,7 +9,7 @@
             Class of Car
             </summary>
         </member>
-        <member name="M:ClassLibrary.Car.#ctor">
+        <member name="M:ClassLibrary.Car.#ctor(System.String,System.Boolean,System.DateTime)">
             <summary>
             Empty Constructor for class car 
             </summary>
@@ -40,10 +40,30 @@
             Base class Vehicle
             </summary>
         </member>
+        <member name="P:ClassLibrary.Vehicle.Date">
+            <summary>
+            Date property for car class returns type DateTime
+            </summary>
+        </member>
+        <member name="M:ClassLibrary.Vehicle.#ctor(System.String,System.Boolean,System.DateTime)">
+            <summary>
+            Protected Vehicle Constructor
+            </summary>
+            <param name="licensePlate"></param>
+            <param name="brobizzDiscount"></param>
+            <param name="date"></param>
+        </member>
+        <member name="M:ClassLibrary.Vehicle.#ctor">
+            <summary>
+            Default constructor that assigns default values to all its properties
+            </summary>
+        </member>
         <member name="M:ClassLibrary.Vehicle.Price">
             <summary>
             returns the Price of the car (240)
-            It's possible to override this method, because it is virtual 
+            It's possible to override this method, because it is virtual
+            set it to the price of car because there will more likely
+            be more cars than motorcycles crossing the bridge
             </summary>
             <returns>240 dkk</returns>
         </member>
@@ -59,10 +79,11 @@
             the length is over of the license plate is over 7 characters long
             </summary>
         </member>
-        <member name="P:ClassLibrary.Vehicle._date">
+        <member name="M:ClassLibrary.Vehicle.AfterBrobizzDiscount">
             <summary>
-            Date property for car class returns type DateTime
+            Returns the discounted price for people using Brobizz
             </summary>
+            <returns>5% discount on ticket price</returns>
         </member>
     </members>
 </doc>

@@ -9,7 +9,8 @@ namespace ClassLibrary
     /// </summary>
     public class Motorcycle : Vehicle
     {
-        
+        public Motorcycle(string licensePlate, bool brobizzDiscount, DateTime date) 
+            : base(licensePlate, brobizzDiscount, date) { }
         /// <summary>
         /// Simple override method returns Motorcycle price is 125
         /// instead of the default price of vehicle(240)

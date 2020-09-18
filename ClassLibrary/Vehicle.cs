@@ -15,9 +15,43 @@ namespace ClassLibrary
 
         private string _licensePlate;
 
+
+        /// <summary>
+        /// Date property for car class returns type DateTime
+        /// </summary>
+        public DateTime Date { get; set; }
+
+        public bool BrobizzDiscount { get; set; }
+
+
+        /// <summary>
+        /// Protected Vehicle Constructor
+        /// </summary>
+        /// <param name="licensePlate"></param>
+        /// <param name="brobizzDiscount"></param>
+        /// <param name="date"></param>
+        protected Vehicle(string licensePlate, bool brobizzDiscount, DateTime date)
+        {
+            LicensePlate = licensePlate;
+            BrobizzDiscount = brobizzDiscount;
+            Date = date;
+        }
+
+        /// <summary>
+        /// Default constructor that assigns default values to all its properties
+        /// </summary>
+        protected Vehicle()
+        {
+            LicensePlate = default;
+            BrobizzDiscount = default;
+            Date = default;
+        }
+
         /// <summary>
         /// returns the Price of the car (240)
-        /// It's possible to override this method, because it is virtual 
+        /// It's possible to override this method, because it is virtual
+        /// set it to the price of car because there will more likely
+        /// be more cars than motorcycles crossing the bridge
         /// </summary>
         /// <returns>240 dkk</returns>
         public virtual double Price()
@@ -42,19 +76,23 @@ namespace ClassLibrary
             {
                 if (value.Length > 7)
                 {
-                    throw new ArgumentOutOfRangeException("License Plate Exceeded The Maximum Length of 7");
+                    throw new ArgumentException("License Plate Exceeded The Maximum Length of 7");
+                    this._licensePlate = value;
                 }
 
-                this._licensePlate = value;
             }
         }
 
         /// <summary>
-        /// Date property for car class returns type DateTime
+        /// Returns the discounted price for people using Brobizz
         /// </summary>
-        public DateTime _date { get; set; }
-
-        
+        /// <returns>5% discount on ticket price</returns>
+        public virtual double AfterBrobizzDiscount()
+        {
+            if (BrobizzDiscount)
+                return Price() * 0.95;
+            return Price();
+        }
 
     }
 }
