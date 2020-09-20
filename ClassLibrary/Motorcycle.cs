@@ -9,6 +9,12 @@ namespace ClassLibrary
     /// </summary>
     public class Motorcycle : Vehicle
     {
+        /// <summary>
+        /// Motorcycle Constructor
+        /// </summary>
+        /// <param name="licensePlate"></param>
+        /// <param name="brobizzDiscount"></param>
+        /// <param name="date"></param>
         public Motorcycle(string licensePlate, bool brobizzDiscount, DateTime date) 
             : base(licensePlate, brobizzDiscount, date) { }
         /// <summary>

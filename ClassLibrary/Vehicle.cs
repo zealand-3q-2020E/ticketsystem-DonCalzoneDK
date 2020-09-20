@@ -21,6 +21,10 @@ namespace ClassLibrary
         /// </summary>
         public DateTime Date { get; set; }
 
+
+        /// <summary>
+        /// default properties for BrobizzDiscount
+        /// </summary>
         public bool BrobizzDiscount { get; set; }
 
 

@@ -14,8 +14,10 @@ namespace ClassLibrary
         /// <summary>
         /// Empty Constructor for class car 
         /// </summary>
-        public Car(string licensePlate, bool brobizzDiscount, DateTime date) 
-            : base(licensePlate, brobizzDiscount, date) { }
+        public Car(string licensePlate, bool brobizzDiscount, DateTime date)
+            : base(licensePlate, brobizzDiscount, date)
+        {
+        }
 
 
         /// <summary>
